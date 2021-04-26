@@ -19,6 +19,12 @@ docker run -dit --name server1 --hostname server1 ubuntu:16.04 /bin/bash
 ```
 The above command creates a container by name server2 and start the container.
 
+### Get inside a container
+```
+docker exec -it server1 bash
+```
+To come out of the secondary shell above, you may type exit.
+
 ### Listing the currently running containers
 ```
 docker ps
