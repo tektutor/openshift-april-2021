@@ -57,7 +57,7 @@ docker restart server1
 export DOCKER_HOST=tcp://10.20.30.40:4243
 docker images
 ```
-In the above IP 10.20.30.40 is the IP address where Docker Server is running.
+In the above IP 10.20.30.40 is the IP address of the Docker Server.
 Port 4243 is where the REST API services are available from Docker Server.
 'docker' is the client tool which connects to dockerd (Docker engine Server) running in a different machine.
 
