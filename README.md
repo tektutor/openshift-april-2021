@@ -16,4 +16,27 @@ docker run -it --name server2 --hostname server2 ubuntu:16.04 /bin/bash
 ```
 docker run -dit --name server1 --hostname server1 ubuntu:16.04 /bin/bash
 ```
+### Listing the currently running containers
+```
+docker ps
+```
 
+### Listing all containers
+```
+docker ps -a
+```
+
+### Stopping a running container
+```
+docker stop server1
+```
+
+### Starting a stopped container
+```
+docker start server1
+```
+
+### Restarting a container
+```
+docker restart server1
+```
