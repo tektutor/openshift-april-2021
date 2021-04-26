@@ -62,6 +62,19 @@ Port 4243 is where the REST API services are available from Docker Server.
 'docker' is the client tool which connects to dockerd (Docker engine Server) running in a different machine.
 
 ### Building custom Docker Image
+
+You need to create a file name Dockerfile with the below contents
+
+```
+FROM ubuntu:16.04
+MAINTAINER Jeganathan Swaminathan <jegan@tektutor.org>
+
+RUN apt-get update && apt-get install -y default-jdk maven git tree
+```
+
+Once the above file is saved, try the below command
 ```
 docker build -t tektutor/custom-ubuntu .
 ```
+
+
