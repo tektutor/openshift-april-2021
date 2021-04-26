@@ -63,7 +63,7 @@ Port 4243 is where the REST API services are available from Docker Server.
 
 ### Building custom Docker Image
 
-You need to create a file name Dockerfile with the below contents
+You need to create a file named Dockerfile with the below contents
 
 ```
 FROM ubuntu:16.04
