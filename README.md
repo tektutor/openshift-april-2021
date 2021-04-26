@@ -60,3 +60,8 @@ docker images
 In the above IP 10.20.30.40 is the IP address where Docker Server is running.
 Port 4243 is where the REST API services are available from Docker Server.
 'docker' is the client tool which connects to dockerd (Docker engine Server) running in a different machine.
+
+### Building custom Docker Image
+```
+docker build -t tektutor/custom-ubuntu .
+```
