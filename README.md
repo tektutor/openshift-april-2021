@@ -183,6 +183,19 @@ From within mysql1 container, you may try using mysql client
 mysql -u root -p
 ```
 when mysql client prompts for password, type root as the password.
+Once you are connect to the  mysql prompt,  you may try the below commands
+```
+SHOW DATABASES;
+CREATE DATABASE tektutor;
+USE tektutor;
+CREATE TABLE training (id int, name varchar2(25), duration varchar2(10));
+INSERT INTO training VALUES ( 1, "DevOps", "5 Days" );
+INSERT INTO training VALUES ( 2, "OpenShift", "5 Days" );
+INSERT INTO training VALUES ( 3, "Microservices", "5 Days" );
+
+SELECT * FROM training;
+```
+After seeing the 3 saved records,  come out of the container.
 
 ### Volume mounting
 ```
