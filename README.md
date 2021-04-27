@@ -149,6 +149,17 @@ docker run -d --name nginx2 --hostname nginx2 -p 8002:80 nginx:1.18
 docker run -d --name nginx3 --hostname nginx3 -p 8003:80 nginx:1.18
 ```
 
+Check if the containers are running
+```
+docker ps
+```
+You may access the nginx web page as shown below
+```
+curl http://localhost:8001
+curl http://localhost:8002
+curl http://localhost:8003
+```
+
 ### Volume mounting
 ```
 docker run -d --name mysql1 --hostname mysql1 -v /tmp/data1:/var/lib/mysql mysql:latest
