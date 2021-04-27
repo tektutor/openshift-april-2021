@@ -3,21 +3,23 @@
 ### Listing the docker images in the local registry
 docker images
 
-### Pulling a image from Docker Hub(Remote Registry) to Local docker registry
+### Pulling an image from Docker Hub(Remote Registry) to Local docker registry
+```
 docker pull hello-world:latest
-docker pull ubuntu:16.04 
+docker pull ubuntu:16.04
+```
 
-### Create a container in the foreground mode using. ubuntu:16.04 docker image
+### Create a container in the foreground mode using ubuntu:16.04 docker image
 ```
 docker run -it --name server2 --hostname server2 ubuntu:16.04 /bin/bash
 ```
-The above command creates a container by name server2 and start the container.
+The above command creates a container by name server2 and starts the container.
 
-### Create container in the background mode out of ubuntu:16.04 docker image
+### Create container in the background mode using ubuntu:16.04 docker image
 ```
 docker run -dit --name server1 --hostname server1 ubuntu:16.04 /bin/bash
 ```
-The above command creates a container by name server2 and start the container.
+The above command creates a container by name server2 and starts the container.
 
 ### Get inside a container
 ```
@@ -51,6 +53,7 @@ Assuming a container by name server1 is in Exited state currently.
 ```
 docker restart server1
 ```
+Assuming the server1 container is already created.
 
 ### Connect local docker client to remote docker server
 ```
@@ -77,4 +80,15 @@ Once the above file is saved, try the below command
 docker build -t tektutor/custom-ubuntu .
 ```
 
+### Port forwarding
+```
+docker run -d --name nginx1 --hostname nginx1 -p 8001:80 nginx:1.18
+docker run -d --name nginx2 --hostname nginx2 -p 8002:80 nginx:1.18
+docker run -d --name nginx3 --hostname nginx3 -p 8003:80 nginx:1.18
+```
 
+### Volume mounting
+```
+docker run -d --name mysql1 --hostname mysql1 -v /tmp/data1:/var/lib/mysql mysql:latest
+docker run -d --name mysql2 --hostname mysql2 -v /tmp/data2:/var/lib/mysql mysql:latest
+```
