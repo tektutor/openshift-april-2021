@@ -57,6 +57,11 @@ docker restart server1
 ```
 Assuming the server1 container is already created.
 
+### Renaming a container
+```
+docker rename old-name new-name
+```
+
 ### Connect local docker client to remote docker server
 ```
 export DOCKER_HOST=tcp://10.20.30.40:4243
