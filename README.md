@@ -178,6 +178,11 @@ Assuming the mysql container is running,  try to get inside the container as sho
 ```
 docker exec -it mysql1 bash
 ```
+From within mysql1 container, you may try using mysql client
+```
+mysql -u root -p
+```
+when mysql client prompts for password, type root as the password.
 
 ### Volume mounting
 ```
