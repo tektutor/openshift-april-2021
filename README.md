@@ -168,11 +168,11 @@ curl http://localhost:8003
 ```
 ### Creating mysql container without volume mounting
 ```
-docker run -d --name mysql1 --hostname mysql1 mysql:latest
+docker run -d --name mysql1 --hostname mysql1 -e MYSQL_ROOT_PASSWORD=root mysql:latest
 ```
 
 ### Volume mounting
 ```
-docker run -d --name mysql1 --hostname mysql1 -v /tmp/data1:/var/lib/mysql mysql:latest
-docker run -d --name mysql2 --hostname mysql2 -v /tmp/data2:/var/lib/mysql mysql:latest
+docker run -d --name mysql1 --hostname mysql1 -v /tmp/data1:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest
+docker run -d --name mysql2 --hostname mysql2 -v /tmp/data2:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest 
 ```
