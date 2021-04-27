@@ -195,7 +195,51 @@ INSERT INTO training VALUES ( 3, "Microservices", "5 Days" );
 
 SELECT * FROM training;
 ```
-After seeing the 3 saved records,  come out of the container.
+After seeing the 3 saved records,  come out of the mysql prompt and then out of the container as shown below
+```
+exit
+exit
+```
+We can now try stopping mysql container
+```
+docker stop mysql1
+```
+Try starting it again
+```
+docker start mysql1
+```
+Get inside the mysql1 container
+```
+docker exec -it mysql1  bash
+```
+Now try to connect to mysql server
+```
+mysql -u root -p
+```
+Type the password as root as password.
+Now see if the tektutor database is still present after rebooting mysql1 container.
+```
+SHOW DATABASES;
+```
+NOW switch to tektutor database.
+```
+USE tektutor;
+```
+Now check if the table and records that we created are present
+```
+SELECT * FROM training;
+```
+From this exercise, you have understood container storage is not volatile.
+
+Now let's come out of the mysql prompt and then out of the container.
+```
+mysql> exit
+exit
+```
+Now you may remove the container
+```
+docker rm -f mysql1
+```
 
 ### Volume mounting
 ```
