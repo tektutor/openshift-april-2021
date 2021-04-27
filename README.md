@@ -80,6 +80,66 @@ Once the above file is saved, try the below command
 docker build -t tektutor/custom-ubuntu .
 ```
 
+### Containerizing python flask application
+
+Create a Dockerfile as shown below
+```
+FROM python:3.8-slim-buster
+
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
+
+COPY hello.py hello.py
+
+CMD [ "python3", "hello.py" ]
+```
+
+Now you can build your custom python image as shown below
+```
+docker build -t tektutor/hello-python-ms:1.0 .
+```
+
+docker run -d --name hello-python-ms --hostname hello-python-ms -p 5000:5000 tektutor/hello-python-ms:1.0 
+docker run -d --name hello-python-ms --hostname hello-python-ms -p 5000:5000 tektutor/hello-python-ms:1.0
+
+Verify if the container is up and running
+```
+docker ps
+```
+
+See if you can access the python microservice as shown below
+```
+curl http://localhost:5000
+curl http://localhost:5000/tektutor
+```
+
+### Containerizing Java spring-boot microservice
+
+Create a Dockerfile as shown below
+```
+FROM alpine:latest
+
+RUN apk add openjdk8
+COPY hello.jar hello.jar
+
+CMD ["java", "-jar", "./hello.jar"]
+```
+
+Now you can build your custom python image as shown below
+```
+docker build -t tektutor/hello-java-ms:1.0 .
+```
+
+Create a container to test our custom Java microservice image
+```
+docker run -d --name hello-java-ms --hostname hello-java-ms -p 8080:8080 tektutor/hello-java-ms:1.0 .
+```
+
+See if you can access the microservice as shown below
+```
+curl http://localhost:8080/hello
+```
+
 ### Port forwarding
 ```
 docker run -d --name nginx1 --hostname nginx1 -p 8001:80 nginx:1.18
