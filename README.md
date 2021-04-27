@@ -170,6 +170,14 @@ curl http://localhost:8003
 ```
 docker run -d --name mysql1 --hostname mysql1 -e MYSQL_ROOT_PASSWORD=root mysql:latest
 ```
+See if the mysql container is running
+```
+docker ps
+```
+Assuming the mysql container is running,  try to get inside the container as shown below
+```
+docker exec -it mysql bash
+```
 
 ### Volume mounting
 ```
