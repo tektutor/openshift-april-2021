@@ -106,9 +106,11 @@ Now you can build your custom python image as shown below
 docker build -t tektutor/hello-python-ms:1.0 .
 ```
 
+Create container using above image
+```
 docker run -d --name hello-python-ms --hostname hello-python-ms -p 5000:5000 tektutor/hello-python-ms:1.0 
 docker run -d --name hello-python-ms --hostname hello-python-ms -p 5000:5000 tektutor/hello-python-ms:1.0
-
+```
 Verify if the container is up and running
 ```
 docker ps
