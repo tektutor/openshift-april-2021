@@ -176,7 +176,7 @@ docker ps
 ```
 Assuming the mysql container is running,  try to get inside the container as shown below
 ```
-docker exec -it mysql bash
+docker exec -it mysql1 bash
 ```
 
 ### Volume mounting
