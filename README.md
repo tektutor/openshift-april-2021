@@ -166,6 +166,10 @@ curl http://localhost:8001
 curl http://localhost:8002
 curl http://localhost:8003
 ```
+### Creating mysql container without volume mounting
+```
+docker run -d --name mysql1 --hostname mysql1 mysql:latest
+```
 
 ### Volume mounting
 ```
