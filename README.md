@@ -1,7 +1,9 @@
 ## Commonly used Docker Commands
 
 ### Listing the docker images in the local registry
+```
 docker images
+```
 
 ### Pulling an image from Docker Hub(Remote Registry) to Local docker registry
 ```
