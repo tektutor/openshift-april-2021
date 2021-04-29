@@ -1,0 +1,14 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    labels:
+      app: nginx
+    name: nginx-pod
+    namespace: default
+  spec:
+    containers:
+    - image: nginx:1.18
+      imagePullPolicy: IfNotPresent
+      name: nginx

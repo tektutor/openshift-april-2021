@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  generation: 2
+  labels:
+    app: nginx
+  name: nginx-84b9b46f96
+  namespace: default
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+        pod-template-hash: 84b9b46f96
+    spec:
+      containers:
+      - image: nginx:1.18
+        imagePullPolicy: IfNotPresent
+        name: nginx
