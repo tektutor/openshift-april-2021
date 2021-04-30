@@ -1,0 +1,12 @@
+oc new-project cicd  --display-name="CI/CD"
+oc new-project dev   --display-name="Tasks - DEV"
+oc new-project stage --display-name="Tasks - STAGE"
+
+oc get projects
+
+oc policy add-role-to-user edit system:serviceaccount:cicd:default -n cicd
+oc policy add-role-to-user edit system:serviceaccount:cicd:default -n dev
+oc policy add-role-to-user edit system:serviceaccount:cicd:default -n stage
+
+oc process -f https://raw.githubusercontent.com/OpenShiftDemos/openshift-cd-demo/master/cicd-gogs-template.yaml | oc create -f -
+
